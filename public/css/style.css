@@ -1,0 +1,916 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+/* Navigation */
+
+#nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar-brand img {
+    height: 50px;
+    padding-left: 30px;
+}
+
+.navbar-nav li {
+    padding: 0 10px;
+}
+
+.navbar-nav li a {
+    float: right;
+    text-align: left
+}
+
+#nav-bar ul li a:hover {
+    color: #007bff!important;
+    font-weight: 600;
+}
+
+.navbar {
+    /* background: rgba(255, 255, 255, 0.9); */
+    background: #fff;
+}
+
+.navbar-toggler {
+    border: none!important;
+}
+
+.nav-link {
+    color: #555!important;
+    font-size: 16px;
+}
+
+/* Slider */
+
+#slider {
+    width: 100%;
+}
+
+.carousel-caption {
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: initial!important;
+}
+
+.carousel-caption h5 {
+    color: #fff;
+    font-size: 42px;
+}
+
+/* About */
+
+#about {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: #555;
+}
+
+#about .btn {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.about-content {
+    padding-top: 20px;
+}
+
+.skills-bar p {
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.progress-bar {
+    border-radius: 16px;
+}
+
+.progress {
+    border-radius: 16px !important;
+    margin-bottom: 20px;
+}
+
+/* menu */
+
+#menu {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0,0,0,0.8)),url(../img/hh22.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #efefef !important;
+    background-attachment: fixed;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#menu h1 {
+    text-align: center;
+    color: #efefef !important;
+    padding-bottom: 10px;
+}
+
+#menu h1::after {
+    content: '';
+    background: #efefef;
+    display: block;
+    height: 3px;
+    width: 170px;
+    margin: 20px auto 5px;
+}
+
+.menu {
+    margin-top: 40px;
+}
+
+.icon {
+    font-size: 40px;
+    margin: 20px auto;
+    padding-top: 10px;
+    height: 80px;
+    width: 80px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+
+#menu p {
+    font-size: 14px;
+    margin-top: 20px;
+    color: #ccc;
+}
+
+.menu .col-md-3:hover{
+    background: #007bff;
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+.menu .col-md-3 a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Offer */
+
+#offer {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 30px;
+}
+
+#offer .offer {
+    color: #333 !important;
+    padding: 30px;  
+    margin-bottom: 30px;
+    background-color: #efefef;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+
+#offer .offer:hover {
+    transition: 0.2s;
+    cursor: pointer;
+    color: #efefef !important;
+    background-color: #333;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#offer .title-name {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 50px;
+    color: #fff;
+}
+
+#offer .col-md-3 {
+    background-color: #007bff;
+    margin-bottom: 30px;
+}
+
+/* Team Members */
+
+#team {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: #555;
+    margin-top: 30px;
+}
+
+h1 {
+    text-align: center;
+    color: #555 !important;
+    padding-bottom: 10px;
+}
+h1::after {
+    content: '';
+    background: #007bff;
+    display: block;
+    height: 3px;
+    width: 170px;
+    margin: 20px auto 5px;
+}
+
+.profile-pic {
+    margin-top: 25px;
+}
+
+.profile-pic .img-box {
+    opacity: 1;
+    display: block;
+    position: relative;
+}
+
+.profile-pic .img-box img {
+    filter: grayscale(1);
+    border-radius: 50%;
+}
+
+.profile-pic .img-box img:hover {
+    filter: grayscale(0);
+    cursor: pointer;
+    border-radius: 0%;
+    transition: 0.5s;
+}
+
+.profile-pic .img-box .img-fluid {
+    width: 70%;
+    height: 70%;
+}
+
+.profile-pic h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #007bff !important;
+}
+
+.profile-pic .others {
+    color: #007bff !important;
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+.profile-pic p {
+    font-weight: bold;
+}
+
+.profile-pic h3 {
+    font-size: 15px;
+    font-weight: bold;
+    /* margin-top: 15px; */
+}
+
+#team .fa {
+    height: 25px;
+    width: 25px;
+    color: #007bff !important;
+    background: #fff;
+    padding: 4px;
+    border-radius: 50%;
+}
+
+.img-box ul {
+    padding: 15px 0;
+    position: absolute;
+    z-index: 2;
+    bottom: 20%;
+    left: 32%;
+    transform: translateY(-50%);
+    opacity: 0;
+}
+
+.img-box .subordinates {
+    bottom: 5%;
+    left: 30%;
+}
+
+.img-box ul li {
+    padding: 5px;
+    display: inline-block
+}
+
+.img-box:hover ul{
+    opacity: 1;
+}
+
+.img-box ul, .img-box ul li {
+    transition: 0.5s;
+}
+
+/* Promo */
+
+#promo {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0,0,0,0.7)),url(../img/hh22.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #efefef;
+    background-attachment: fixed;
+    text-align: center;
+    padding: 100px;
+    font-family: sans-serif;
+    font-size: 38px;
+}
+
+#promo p, #promo h3{
+    color: white;
+}
+
+#promo img {
+    height: 150px;
+}
+
+.select2-container--default .select2-selection--single { 
+    height: 60px !important; 
+    line-height: 60px !important;
+    background: rgba(0, 0, 0, 0.5)!important;
+    text-align: left;
+    border: none!important;
+    box-shadow: none!important;
+}
+
+.select2-container--default .select2-selection--single:hover {
+    box-shadow: 0 0 10px rgba(67,128,233)!important;
+    transition: 0.5s!important;
+}
+
+.select2-selection__rendered {
+    font-size: 16px;
+    padding-left: 35px!important;
+    padding-top: 15px;
+    font-weight: 100!important;
+    color: #999!important;
+    text-align: left;
+}
+
+.select2-selection__arrow{
+    margin-top: 15px;
+}
+
+/* Get in Touch */
+
+#contact {
+    background-color: #dfdede;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    color: #777;
+}
+
+.contact-form {
+    padding: 15px;
+}
+
+.form-control {
+    border-radius: 0 !important;
+    border: none !important;
+}
+
+::placeholder {
+    color: #999 !important;
+}
+
+.follow {
+    background: #fff;
+    padding: 10px;
+    margin: 15px;
+}
+
+.contact-info .fa {
+    margin: 10px;
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Footer */
+
+#footer {
+    background-color: #333;
+    color: #fff;
+    padding: 12px;
+}
+
+.fa-heart-o {
+    margin: 3px;
+    color: red;
+}
+
+/* BALANCE PAGE */
+
+/* Modal Entry */
+
+.open-button {
+    background-color: none;
+    color: white;
+    padding: 16px 20px;
+    cursor: pointer;
+    opacity: 0.7;
+    position: fixed;
+    bottom: 23px;
+    right: 10px;
+    z-index: 9;
+}
+
+#entry label {
+    font-weight: bold;
+    color: #555;
+}
+
+.modal-content {
+    background-color: #ddd!important;
+}
+
+#base {
+    margin: -10px auto;
+    text-align: center;
+}
+
+#base2 {
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Table */
+
+#table {
+    background-color: #ddd;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.index-table {
+    background-color: #fff;
+    width: 100%;
+}
+
+.index-table p {
+    color: #555;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+#table .dataTables_length label {
+    padding-left: 10px;
+}
+
+#table .dataTables_filter label {
+    padding-right: 10px;
+}
+
+.dataTables_filter input {
+    box-shadow: 0 0 2px rgba(67,128,233)!important;
+    border-radius: 2px!important;
+}
+
+.dataTables_filter input:hover {
+    box-shadow: 0 0 10px rgba(67,128,233)!important;
+    transition: 0.5s;
+}
+
+/* TABLES CONTAINER */
+
+.con {
+    margin: auto 80px;
+}
+
+
+/* CHANGE ADMIN INFO */
+
+/* Change Details */
+
+#change-details {
+    background-color: #ddd;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+#change-details .form-control {
+    padding: 25px;
+}
+
+#change-details .form-group {
+    margin: 10px 0 30px 0;
+}
+
+#change-details label {
+    color: #555;
+    font-weight: bold;
+}
+
+/* ABOUT PAGE */
+
+#about-page {
+    background-color: #efefef;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+#about-page .col-md-8 {
+    background-color: #fff
+}
+
+#about-page .col-md-4 {
+    background-color: #777;
+    color: #fff;
+}
+
+/* SAVINGS PAGE */
+
+/* Members Savings */
+
+#member-savings {
+    background-color: #ddd;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+#member-savings .form-control {
+    padding: 30px;
+    border-radius: 5px!important;
+    font-weight: bold;
+}
+ 
+
+#member-savings .select2-container--default .select2-selection--single { 
+    background: #fff!important;
+    margin-bottom: 12px;
+}
+
+#member-savings .select2-selection__rendered {
+    color: #555!important;
+    font-weight: 400!important;
+}
+
+
+/* INSTALMENT PAGE */
+
+/* Instalment */
+
+#instalment-table {
+    background-color: #ddd;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+#instalment-table .form-control {
+    padding: 30px;
+    border-radius: 5px!important;
+    font-weight: bold;
+}
+
+#instalment-table .select2-container--default .select2-selection--single { 
+    background: #fff!important;
+    margin-bottom: 12px;
+}
+
+#instalment-table .select2-selection__rendered {
+    color: #555!important;
+    font-weight: 400!important;
+}
+
+
+/* LOAN BOND PAGE */
+
+/* Loan Bond */
+
+#loanbond {
+    background-color: #ddd;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+#loanbond article {
+    background: white;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0.5cm;
+    box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+    width: 21cm!important;
+    padding: 30px 40px;
+    font-size: 16px!important;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#loanbond .print-icon i {
+    margin-top: -35px;
+    font-size: 20px;
+}
+
+#loanbond h4 {
+    font-weight: bold;
+}
+
+#loanbond .print-icon {
+    font-size: 16px;
+}
+
+#loanbond .print-icon:hover {
+    color: #074d97;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+#loanbond a {
+    text-decoration: none;
+}
+
+#loanbond .table td {
+    padding-top: 0!important;
+    padding-bottom: 0!important;
+}
+
+#loanbond .table {
+    margin-bottom: 5px!important;
+}
+
+#loanbond p {
+    margin-bottom: 5px;
+}
+
+#loanbond .paragraph {
+    margin-top: 10px;
+}
+
+#loanbond .follow-paragraph {
+    padding-left: 40px;
+    padding-right: 0;
+}
+
+#loanbond .signatory {
+    margin-top: 20px;
+}
+
+#loanbond .declaration {
+    margin-top: 10px;
+}
+
+#loanbond .official {
+    background: black;
+    padding: 5px;
+    width: fit-content;
+    margin: 20px auto;
+    color: white;
+    font-size: 20px;
+}
+
+/* SAVINGS-TABLE */
+
+#savings-table {
+    background: #ddd;
+    padding-bottom: 40px;
+}
+
+#savings-table .container {
+    background: #fff;
+}
+
+#savings-table #savingsTable td, th {
+    border: 1px solid #ddd;
+}
+
+#savings-table label {
+    display: inline-flex;
+}
+
+#savings-table .dataTables_filter input {
+    margin-left: 10px!important;
+}
+
+#savings-table .col-md-6:first-child {
+    margin-right: -370px!important;
+}
+
+#savings-table .col-md-5 {
+    margin-right: -370px!important;
+}
+
+#savings-table .row-num {
+    font-weight: bold;
+    color: #555;
+}
+
+#savings-table .values {
+    font-weight: bold;
+}
+
+
+/* INSTALMENT TABLE */
+
+#each-member-instalment {
+    background: #ddd;
+    padding-bottom: 40px;
+}
+
+#each-member-instalment .container {
+    background: #fff;
+}
+
+#each-member-instalment #instalmentTable td, th {
+    border: 1px solid #ddd;
+}
+
+#each-member-instalment label {
+    display: inline-flex;
+}
+
+#each-member-instalment .dataTables_filter input {
+    margin-left: 10px!important;
+}
+
+#each-member-instalment .col-md-6:first-child {
+    margin-right: -485px!important;
+}
+
+#each-member-instalment .col-md-5 {
+    margin-right: -485px!important;
+}
+
+#each-member-instalment .row-num {
+    font-weight: bold;
+    color: #555;
+}
+
+#each-member-instalment .values {
+    font-weight: bold;
+}
+
+
+.alertify-notifier .ajs-message.ajs-success{
+    color: #fff!important;
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.5)!important;
+    text-align: center!important;
+}
+
+.alertify-notifier .ajs-message.ajs-error{
+    color: #fff!important;
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.5)!important;
+    text-align: center!important;
+}
+
+
+/* Login Form */
+
+#login-form {
+    background: #ddd;
+    padding-bottom: 40px;
+}
+
+#log-in {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.9);
+    background: #fff;
+    padding: 20px 50px;
+    margin-top: 60px;
+}
+
+#signup {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.9);
+    background: #fff;
+    padding: 20px 50px;
+    margin-top: 60px;
+}
+
+.form-container {
+    padding: 0px 15px;
+}
+
+
+.compName {
+    text-align: center;
+    margin-top: 10px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.buttomText {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.buttomText a {
+    text-decoration: none!important;
+    color: #333;
+}
+
+.buttomText a:hover {
+    transition: 0.5s;
+    color: #0d75e4!important;
+}
+
+.click {
+    margin-bottom: -20px;
+    margin-top: 10px;
+    color: #333!important;
+    text-align: center;
+}
+
+hr .border {
+    color: black;
+    border: 2px solid black;
+}
+
+.click a {
+    font-weight: bold;
+    color: #0d75e4;
+    text-decoration: none!important;
+}
+
+#log-in .log-in {
+    position: relative;
+}
+
+#log-in .log-in i {
+    position: absolute;
+    left: 0;
+    top: 8px;
+    padding: 35px 12px;
+    color: #aaa;
+    transition: 0.3s;
+}
+
+#log-in .log-in input[type=text]:focus + i, #log-in .log-in input[type=password]:focus + i, #log-in .log-in input[type=email]:focus + i {
+    color: dodgerblue;
+}
+
+#signup .log-in {
+    position: relative;
+}
+
+#signup .log-in i {
+    position: absolute;
+    top: 8px;
+    padding: 54px 12px;
+    color: #aaa;
+    transition: 0.3s;
+}
+
+#signup .log-in input[type=text]:focus + i, #signup .log-in input[type=password]:focus + i, #signup .log-in input[type=email]:focus + i {
+    color: dodgerblue;
+}
+
+#signup .form-group {
+    padding-top: 20px;
+}
+
+/* Some Tips */
+
+#some-tips {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0,0,0,0.7)),url(../img/hh22.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #efefef;
+    background-attachment: fixed;
+    text-align: center;
+    padding: 50px;
+    font-family: sans-serif;
+    font-size: 38px;
+}
+
+#some-tips .question {
+    font-size: 50px;
+    color: #fff;
+    font-weight: bold;
+}
+
+#some-tips .question img {
+    height: 150px;
+    padding-left: 20px;
+}
+
+
+/* Profile */
+
+#profile {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: #555;
+    background-color: #dfdede;
+}
+
+#profile td {
+    padding-bottom: 30px!important;
+}
+
+#profile .user-details {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.9);
+}
+
+#profile table {
+    /* letter-spacing: 0.1px; */
+    font-size: 15px;
+}
+
+#change-password .change-password {
+    position: relative;
+}
+
+#change-password .change-password i {
+    position: absolute;
+    left: 0;
+    top: 8px;
+    padding: 35px 12px;
+    color: #aaa;
+    transition: 0.3s;
+}
+
+#change-password .change-password input[type=password]:focus + i{
+    color: dodgerblue;
+}
