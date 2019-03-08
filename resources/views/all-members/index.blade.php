@@ -83,6 +83,56 @@
             </div>            
         </div>
     </section>
+
+
+    <!-- Members Tables -->
+    <!-- <section id="savings-table">
+        <h1 style="padding: 30px 0px 10px 0px;">Modify Members</h1>
+        <div class="container">
+            <div class="account-table">
+                <p class="row-num">Select Number of Rows</p>
+                <table id="savingsTable" class="table table-responsive table-striped table-hover">
+                    <thead>
+                        <tr class="table-info">
+                            <th>Name</th>
+                            <th>Account Number</th>
+                            <th>Email</th>
+                            <th>Address</th>
+                            <th>Password</th>
+                            <th>Savings</th>
+                            <th>Picture</th>
+                            <th>Option</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($members as $member)
+                        <tr>
+                            <td class="text-left"><span class="txt spanname">{{$member->name}}</span><input type="text" class="form-control name txtbox" value="{{$member->deposit}}" style="display:none"></td>
+                            <td class="text-left"><span class="txt spanaccountnumber">{{$member->accountnumber}}</span><input type="text" class="form-control accountnumber txtbox" value="{{$member->deposit}}" style="display:none"></td>
+                            <td class="text-left"><span class="txt spanemail">{{$member->email}}</span><input type="text" class="form-control email txtbox" value="{{$member->deposit}}" style="display:none"></td>
+                            <td class="text-left"><span class="txt spanaddress">{{$member->address}}</span><input type="text" class="form-control address txtbox" value="{{$member->withdrawal}}" style="display:none"></td>
+                            <td class="text-left"><span class="txt spanpassword">{{$member->password}}</span><input type="text" class="form-control password txtbox" value="{{$member->balance}}" style="display:none"></td>
+                            <td class="text-left"><span class="txt spansavings">{{$member->savings}}</span><input type="text" class="form-control savings txtbox" value="{{$member->balance}}" style="display:none"></td>
+                            <td class="text-left"><span class="txt spanpicture">{{$member->picture}}</span><input type="text" class="form-control picture txtbox" value="{{$member->balance}}" style="display:none"></td>
+                            <td>
+                                <input type="hidden" class="id" value="{{$member->id}}">
+                                <div class="btn-group" role="group" style="display:flex;">
+                                    <button class="btn btn-warning btn-sm edit" title="Edit" onclick="edit(this)"><i class="fa fa-edit"></i></button>
+                                    <button class="btn btn-danger btn-sm trash" title="Delete" onclick="deleteo(this)"><i class="fa fa-trash"></i></button>
+                                </div>
+                                
+                                <div class="btn-group" role="group" style="display:flex;">
+                                    <button class="btn btn-success btn-sm update" title="Update" onclick="update(this)" style="display:none"><i class="fa fa-check"></i></button>
+                                    <button class="btn btn-default btn-sm cancel" title="Cancel" onclick="cancel(this)" style="display:none"><i class="fa fa-remove"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        @endforeach                     
+                    </tbody>
+                </table>
+            </div>            
+        </div>
+    </section> -->
     <!-- Footer -->
     <section id="footer">
         <div class="container text-center">

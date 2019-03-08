@@ -6,6 +6,7 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Member;
 
 class RegisterController extends Controller
 {
@@ -62,10 +63,25 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user=User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'user_type'=> 2,
         ]);
+        
+        //Get the last account number and pad with leading zeros
+        $new_acc_no=sprintf("%03d" , Member::orderBy('id', 'DESC')->first()->accountnumber + 1);
+
+        $member= new Member;
+        $member->name = $user->name;
+        $member->user_id = $user->id;
+        $member->save();
+
+        //dd($new_acc_no);
+        $member->accountnumber =  $new_acc_no;
+        $member->update();
+
+        return $user;
     }
 }

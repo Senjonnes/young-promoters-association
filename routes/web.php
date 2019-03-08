@@ -62,9 +62,7 @@ Route::get('board', function () {
 Route::get('profile', function () {
     return view('profile/index');
 });
-Route::get('executives-table', function () {
-    return view('executives-table/index');
-});
+Route::get('all-members', 'ExecutivesController@index');
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');

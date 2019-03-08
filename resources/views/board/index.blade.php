@@ -7,28 +7,82 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            @if(!Auth::check())
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="homepage">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">ABOUT</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#team">BOARD</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">CONTACT</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">LOGIN</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}" style="background: orange;">JOIN NOW</a>
-                    </li>
-                </ul>
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="homepage">HOME</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="board">BOARD</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">CONTACT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login') }}">LOGIN</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('register') }}" style="background: orange;">JOIN NOW</a>
+                </li>
+              </ul>
             </div>
+            @else
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="home">HOME</a>
+                </li>
+                @can('isUser')
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">ABOUT</a>
+                </li>
+                @endcan
+                @can('isAdmin')
+                <li class="nav-item">
+                  <a class="nav-link" href="all-members">MEMBERS</a>
+                </li>
+                @endcan
+                @can('isUser')
+                <li class="nav-item">
+                    <a class="nav-link" href="board">BOARD</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">CONTACT</a>
+                </li>
+                @endcan
+                <li class="dropdown nav-item">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-info">
+                            <a style="text-decoration: none; color: #fff!important;" href="profile">
+                            {{ Auth::user()->user_type==1 ? 'ADMIN' : Auth::user()->name }}
+                            </a>
+                        </button>
+                        <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="#">Account</a>
+                            @can('isUser')
+                            <a class="dropdown-item" href="#">Loan Bond</a>
+                            @endcan
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item"  href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">Logout
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        </div>
+                    </div>
+                </li>
+              </ul>
+            </div>
+            @endif
         </nav>
     </section>
     <!-- Promo -->

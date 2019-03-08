@@ -12,50 +12,55 @@
                 <li class="nav-item">
                   <a class="nav-link" href="#top">HOME</a>
                 </li>
+                @can('isUser')
                 <li class="nav-item">
-                  <a class="nav-link" href="#about">ABOUT</a>
+                    <a class="nav-link" href="#about">ABOUT</a>
                 </li>
+                @endcan
+                @can('isAdmin')
                 <li class="nav-item">
-                    <a class="nav-link" href="#menu">MENU</a>
+                  <a class="nav-link" href="all-members">MEMBERS</a>
                 </li>
+                @endcan
+                @can('isUser')
                 <li class="nav-item">
-                    <a class="nav-link" href="#team">BOARD</a>
+                    <a class="nav-link" href="board">BOARD</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#contact">CONTACT</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="change-admin-info.php">CHANGE ADMIN</a>
-                </li>
+                @endcan
                 <li class="dropdown nav-item">
-                    <a href="#" style="font-weight: bold;" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
-                        {{ Auth::user()->name }} <span class="caret"></span>
-                    </a>
-
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="#">
-                                Account
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-info">
+                            <a style="text-decoration: none; color: #fff!important;" href="profile">
+                            {{ Auth::user()->user_type==1 ? 'ADMIN' : Auth::user()->name }}
                             </a>
-                            <form></form>
-                        </li><br>
-                        <li>
-                            <a href="{{ route('logout') }}"
+                        </button>
+                        <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="#">Account</a>
+                            @can('isUser')
+                            <a class="dropdown-item" href="#">Loan Bond</a>
+                            @endcan
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item"  href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">
-                                Logout
+                                            document.getElementById('logout-form').submit();">Logout
                             </a>
-
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 {{ csrf_field() }}
                             </form>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </li>
               </ul>
             </div>
         </nav>
     </section>
+    @can('isUser')
     <section>
         <!--Slider-->
         <div id="slider">
@@ -135,6 +140,50 @@
             </div>
         </div>
     </section>
+    @endcan
+    @can('isUser')
+    <!-- Menu -->
+    <section id="menu">
+        <div class="container">
+            <h1>Menu</h1>
+            <div class="row menu">
+                <div class="col-md-3 text-center">
+                    <a href="profile"><div class="icon">
+                        <i class="fa fa-money"></i>
+                    </div>
+                    <h3>Profile</h3>
+                    <p>I am interested in this position as it appeals directly to my passion
+                            for working with</p></a>
+                </div>
+                <div class="col-md-3 text-center">
+                    <a href="savings"><div class="icon">
+                            <i class="fa fa-credit-card-alt"></i>
+                    </div>
+                    <h3>View Account</h3>
+                    <p>I am interested in this position as it appeals directly to my passion
+                        for working with</p></a>
+                </div>
+                <div class="col-md-3 text-center">
+                    <a href="installment"><div class="icon">
+                        <i class="fa fa-line-chart"></i>
+                    </div>
+                    <h3>My Instalment</h3>
+                    <p>I am interested in this position as it appeals directly to my passion
+                        for working with</p></a>
+                </div>
+                <div class="col-md-3 text-center">
+                    <a href="#promo"><div class="icon">
+                        <i class="fa fa-usd"></i>
+                    </div>
+                    <h3>Loan Bond</h3>
+                    <p>I am interested in this position as it appeals directly to my passion
+                        for working with</p></a>
+                </div>
+            </div>
+        </div>        
+    </section>
+    @endcan
+    @can('isAdmin')
     <!-- Menu -->
     <section id="menu">
         <div class="container">
@@ -175,12 +224,14 @@
             </div>
         </div>        
     </section>
+    @endcan
+    @can('isUser')
     <!-- Offer -->
-    <!-- <section id="offer">
+    <section id="offer">
         <div class="container">
             <h1>What Makes Us Unique</h1>
-            <div class="row equal">
-                <div class="col-md-4">
+            <div class="row equal offset-md-1">
+                <div class="col-md-3">
                     <p class="title-name">Our Vission</p>
                 </div>
                 <div class="col-md-8 offer">
@@ -189,9 +240,9 @@
                     </p>
                 </div>
             </div>
-            <div class="row equal">
-                <div class="col-md-4">
-                    <p class="title-name">Our Vission</p>
+            <div class="row equal offset-md-1">
+                <div class="col-md-3">
+                    <p class="title-name">Our Mission</p>
                 </div>
                 <div class="col-md-8 offer">
                     <p>I am interested in this position as it appeals directly to my passion for working with 
@@ -199,9 +250,9 @@
                     </p>
                 </div>
             </div>
-            <div class="row equal">
-                <div class="col-md-4">
-                    <p class="title-name">Our Vission</p>
+            <div class="row equal offset-md-1">
+                <div class="col-md-3">
+                    <p class="title-name">Values</p>
                 </div>
                 <div class="col-md-8 offer">
                     <p>I am interested in this position as it appeals directly to my passion for working with 
@@ -210,135 +261,11 @@
                 </div>
             </div>
         </div>        
-    </section> -->
-    <!-- Team Members -->
-    <section id="team">
-        <div class="container">
-            <h1>Company Exceutive Members</h1>
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-4 profile-pic text-center">
-                    <div class="img-box">
-                        <img src="img/n.jpg" class="img-responsive rounded-circle">
-                        <ul>
-                            <a href="#"><li><i class="fa fa-facebook"></i></li></a>
-                            <a href="#"><li><i class="fa fa-twitter"></i></li></a>
-                            <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
-                        </ul>
-                        <div>
-                            <h2>S. A. Emmanuel</h2>
-                            <h3>Chairman</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-4 profile-pic text-center">
-                    <div class="img-box">
-                        <img src="img/n.jpg" class="img-responsive  rounded-circle">
-                        <ul>
-                            <a href="#"><li><i class="fa fa-facebook"></i></li></a>
-                            <a href="#"><li><i class="fa fa-twitter"></i></li></a>
-                            <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
-                        </ul>
-                        <div>
-                            <h2>Odeyemi Kehinde</h2>
-                            <h3>Finance Director</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-3 profile-pic text-center">
-                    <div class="img-box">
-                        <img src="img/n.jpg" class="img-fluid">
-                        <ul class="subordinates">
-                            <a href="#"><li><i class="fa fa-facebook"></i></li></a>
-                            <a href="#"><li><i class="fa fa-twitter"></i></li></a>
-                            <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
-                        </ul>
-                        <div>
-                            <h3 class="others">Adegbite Adebayo</h3>
-                            <p>Director</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 profile-pic text-center">
-                    <div class="img-box">
-                        <img src="img/n.jpg" class="img-fluid">
-                        <ul class="subordinates">
-                            <a href="#"><li><i class="fa fa-facebook"></i></li></a>
-                            <a href="#"><li><i class="fa fa-twitter"></i></li></a>
-                            <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
-                        </ul>
-                        <div>
-                            <h3 class="others">Ola Kehinde</h3>
-                            <p>Director</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 profile-pic text-center">
-                    <div class="img-box">
-                        <img src="img/n.jpg" class="img-fluid">
-                        <ul class="subordinates">
-                            <a href="#"><li><i class="fa fa-facebook"></i></li></a>
-                            <a href="#"><li><i class="fa fa-twitter"></i></li></a>
-                            <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
-                        </ul>
-                        <div>
-                            <h3 class="others">Akinjare Jacob</h3>
-                            <p>Director</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-3 profile-pic text-center">
-                    <div class="img-box">
-                        <img src="img/n.jpg" class="img-fluid">
-                        <ul class="subordinates">
-                            <a href="#"><li><i class="fa fa-facebook"></i></li></a>
-                            <a href="#"><li><i class="fa fa-twitter"></i></li></a>
-                            <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
-                        </ul>
-                        <div>
-                            <h3 class="others">Samuel Olatunji</h3>
-                            <p>Director</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 profile-pic text-center">
-                    <div class="img-box">
-                        <img src="img/n.jpg" class="img-fluid">
-                        <ul class="subordinates">
-                            <a href="#"><li><i class="fa fa-facebook"></i></li></a>
-                            <a href="#"><li><i class="fa fa-twitter"></i></li></a>
-                            <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
-                        </ul>
-                        <div>
-                            <h3 class="others">Adelani Taofeek</h3>
-                            <p>Director</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
-    <!-- Promo -->
-    <section id="promo">
+    <section id="some-tips">
         <div class="container">
-            <p>Get Member's Loan Bond</p>
-            <div class="row">
-                <div class="col-md-6 text-center" style="margin:auto;">
-                    <form>
-                        <select class="chosen-select" style="width: 100%">
-                            <option disabled selected>Member's Name</option>
-                            @foreach($members as $members)
-                                <option>{{$members->name}}</option>
-                            @endforeach
-                        </select>
-                    </form>
-                    <a href="loanbond" class="btn btn-primary">Get Loan Bond</a>
-                </div>
+            <div class="some-ad">
+                <div class="text-center question"><label>HAVE ANY QUESTION</label><img src="img/question.png"></i></div>
             </div>
         </div>
     </section>
@@ -379,6 +306,7 @@
             </div>
         </div>
     </section>
+    @endcan
     <!-- Footer -->
     <section id="footer">
         <div class="container text-center">
@@ -393,6 +321,16 @@
             $('.chosen-select').select2({
                 width: 'resolve' // need to override the changed default
             });
+        });
+
+        $(document).ready(function() {
+
+            var docHeight = $(window).outerHeight();
+            var footerHeight = $('#footer').height();
+            var footerTop = $('#footer').position().top + footerHeight;
+
+            if (footerTop < docHeight)
+                $('#footer').css('margin-top', 10+ (docHeight - footerTop) + 'px');
         });
     </script>
 @endsection 

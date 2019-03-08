@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Executive;
 use Illuminate\Http\Request;
+use App\Member;
 
 class ExecutivesController extends Controller
 {
@@ -14,9 +15,9 @@ class ExecutivesController extends Controller
      */
     public function index()
     {
-        //
+        // dd('hello');
         $executives=Executive::all();
-        return view('executives.index', compact('executives'));
+        return view('all-members.index', compact('executives'));
     }
 
     /**

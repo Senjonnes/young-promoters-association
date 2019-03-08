@@ -19,9 +19,6 @@
                         <a class="nav-link" href="board">BOARD</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">CONTACT</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">LOGIN</a>
                     </li>
                     <li class="nav-item">
