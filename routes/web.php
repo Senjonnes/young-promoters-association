@@ -41,9 +41,6 @@ Route::get('executives', 'ExecutivesController@index');
 Route::get('about', 'MembersController@index');
 Route::get('change-admin-info', 'MembersController@index2');
 Route::get('home', 'MembersController@index3');
-Route::get('loginx', function () {
-    return view('login/index');
-});
 Route::get('change-password', function () {
     return view('change-password/index');
 });
